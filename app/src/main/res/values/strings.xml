@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KotlinFundamentals</string>
+
+    <!--    Button labels-->
+    <string name="dice_roller_label">Dice Roller</string>
+
+    <!--    Dice Roller-->
+    <string name="roll_label">Roll</string>
+    <string name="box_one">Box One</string>
+    <string name="box_two">Box Two</string>
+    <string name="box_three">Box Three</string>
+    <string name="box_four">Box Four</string>
+    <string name="box_five">Box Five</string>
+
+</resources>
