@@ -17,6 +17,13 @@ class ColorMyViewsActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
+        /*Every time you use findViewById() to search for a view
+        after the view is created or recreated, the Android system
+        traverses the view hierarchy at runtime to find it.*/
+
+        /*Data binding: technique through which we avoid traversing the view hierarchy
+        * to find a view and instead we use an object to keep a reference to the searched view */
+
         val redButton = findViewById<TextView>(R.id.red_button)
         val greenButton = findViewById<TextView>(R.id.green_button)
         val yellowButton = findViewById<TextView>(R.id.yellow_button)
