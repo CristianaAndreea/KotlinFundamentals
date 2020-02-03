@@ -1,15 +1,13 @@
 package com.tutorial.kotlinfundamentals
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.tutorial.kotlinfundamentals.databinding.ActivityAboutMeBinding
+import com.tutorial.kotlinfundamentals.models.MyName
 
 
 /**
@@ -24,6 +22,8 @@ class AboutMeActivity : AppCompatActivity() {
 
 //    The name is derived from the name of the layout file, that is, activity_about_me + Binding.
     private lateinit var binding: ActivityAboutMeBinding
+
+    private val myName: MyName = MyName("Hannah Banana")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +53,7 @@ class AboutMeActivity : AppCompatActivity() {
         binding.doneButton.setOnClickListener {
             addNickname(it)
         }
+        binding.myName = myName
     }
 
     /**
@@ -67,21 +68,25 @@ class AboutMeActivity : AppCompatActivity() {
 //        nicknameTextView.visibility = View.VISIBLE
 
 
-        /**When using data binding, it is necessary to explicitly convert the Editable to a String.*/
-        binding.nicknameText.text = binding.nicknameEdit.text.toString()
-        binding.nicknameEdit.visibility = View.GONE
-        view.visibility = View.GONE
 
-        binding.nicknameText.visibility = View.VISIBLE
+//        myName?.nickname = binding.nicknameEdit.text.toString()
+//        binding.nicknameEdit.visibility = View.GONE
+//        view.visibility = View.GONE
+//
+//        binding.nicknameText.visibility = View.VISIBLE
+
 
         /*binding can also be written like this:*/
 
-//        binding.apply {
-//            nicknameText.text = nicknameEdit.text.toString()
-//            nicknameEdit.visibility = View.GONE
-//            doneButton.visibility = View.GONE
-//            nicknameText.visibility = View.VISIBLE
-//        }
+        binding.apply {
+            /**When using data binding, it is necessary to explicitly convert the Editable to a String.*/
+            myName?.nickname = nicknameEdit.text.toString()
+            nicknameEdit.visibility = View.GONE
+            doneButton.visibility = View.GONE
+            nicknameText.visibility = View.VISIBLE
+
+            invalidateAll()
+        }
 
         // Hide the keyboard.
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
