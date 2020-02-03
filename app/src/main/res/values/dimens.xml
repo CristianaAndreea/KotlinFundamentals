@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--    Color My Views-->
     <dimen name="margin_wide">16dp</dimen>
     <dimen name="box_text_size">24sp</dimen>
+
+    <!--    About Me-->
+    <dimen name="padding">16dp</dimen>
+    <dimen name="layout_margin">16dp</dimen>
+    <dimen name="line_spacing_multiplier">1.2</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="small_padding">8dp</dimen>
 </resources>

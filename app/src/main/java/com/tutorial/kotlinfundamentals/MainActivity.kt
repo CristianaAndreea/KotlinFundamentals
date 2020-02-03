@@ -11,13 +11,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        diceRoller.setOnClickListener{
-            val intent  = Intent(this, DiceRollerActivity::class.java)
+        diceRoller.setOnClickListener {
+            val intent = Intent(this, DiceRollerActivity::class.java)
             startActivity(intent)
         }
 
         colorMyViews.setOnClickListener {
-            val intent  = Intent(this, ColorMyViewsActivity::class.java)
+            val intent = Intent(this, ColorMyViewsActivity::class.java)
+            startActivity(intent)
+        }
+
+        aboutMe.setOnClickListener {
+            val intent = Intent(this, AboutMeActivity::class.java)
             startActivity(intent)
         }
     }
